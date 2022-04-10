@@ -1,5 +1,7 @@
 using UnityEngine;
+using System.Collections;
 using TMPro;
+using DG.Tweening;
 
 public class PlayerJumpBehaviour : MonoBehaviour
 {
@@ -10,9 +12,12 @@ public class PlayerJumpBehaviour : MonoBehaviour
     [SerializeField] private GameObject _midBorder;
     [SerializeField] private TextMeshProUGUI _scoreText;
     public int _scorePoints;
+    IEnumerator scaleCoroutine;
+    bool isButtonClicked;
 
     void Start()
     {
+        scaleCoroutine = PlayerScaleBack();
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 60;
         _scorePoints = 0;
@@ -20,12 +25,28 @@ public class PlayerJumpBehaviour : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
     }
 
+    private void Update()
+    {
+        if (isButtonClicked && !FindObjectOfType<PlayerCollecionScript>().isScalePowerUpActive)
+        {
+            StartCoroutine(scaleCoroutine);
+        }
+        else if(isButtonClicked && FindObjectOfType<PlayerCollecionScript>().isScalePowerUpActive)
+        {
+            StopCoroutine(scaleCoroutine);
+        }
+    }
+
     public void OnButtonClicked()
     {
+        isButtonClicked = true;
+        transform.DOPunchScale(new Vector3(0.05f, 0.05f, 0.0f), 0.1f);
+        
         if (isInMid)
         {
             rb2D.velocity = Vector2.up * jumpForce;
             rb2D.AddForce(new Vector2(directionalJumpForce, 0.0f));
+
         }
 
         if (isRightBorderHitted)
@@ -49,7 +70,7 @@ public class PlayerJumpBehaviour : MonoBehaviour
             _scorePoints += 1;
             _scoreText.text = "" + _scorePoints;
             this.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-115f, 0));
-            this.transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+            this.gameObject.GetComponent<SpriteRenderer>().flipX = true;
             isRightBorderHitted = true;
             isLeftBorderHitted = false;
         }
@@ -58,7 +79,7 @@ public class PlayerJumpBehaviour : MonoBehaviour
             _scorePoints += 1;
             _scoreText.text = "" + _scorePoints;
             this.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(115f, 0));
-            this.transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
+            this.gameObject.GetComponent<SpriteRenderer>().flipX = false;
             isRightBorderHitted = false;
             isLeftBorderHitted = true;
         }
@@ -69,6 +90,14 @@ public class PlayerJumpBehaviour : MonoBehaviour
         if(other.transform.name == "MidBorder")
         {
             isInMid = true;
+        }
+    }
+    IEnumerator PlayerScaleBack()
+    {
+        while (true)
+        {
+            transform.localScale = new Vector2(0.32f, 0.28f);
+            yield return new WaitForSeconds(2f);
         }
     }
 }

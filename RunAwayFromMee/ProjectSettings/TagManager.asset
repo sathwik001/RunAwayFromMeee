@@ -7,6 +7,9 @@ TagManager:
   - ShieldEffect
   - ScaleEffect
   - Blade
+  - Spikes
+  - DownSpikes
+  - TopSpikes
   layers:
   - Default
   - TransparentFX

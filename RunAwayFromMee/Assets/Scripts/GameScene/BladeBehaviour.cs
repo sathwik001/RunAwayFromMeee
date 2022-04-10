@@ -1,17 +1,36 @@
 using UnityEngine;
+using System.Collections;
 
 public class BladeBehaviour : MonoBehaviour
 {
-    float speed = 1.5f;
+    private Animator _anim;
+    bool isDestroying;
+
+    void Start()
+    {
+        _anim = GetComponent<Animator>();
+        StartCoroutine(FadeThisGameObject());
+    }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.left * speed * Time.deltaTime);
-
-        if(transform.position.x <= -3.1f)
+        if (isDestroying)
         {
-            Destroy(this.gameObject);
+            _anim.SetTrigger("isDestroying");
+            StartCoroutine(DestroyThisGameObject());
         }
+    }
+
+    IEnumerator FadeThisGameObject()
+    {
+        yield return new WaitForSeconds(4.0f);
+        isDestroying = true;
+    }
+
+    IEnumerator DestroyThisGameObject()
+    {
+        yield return new WaitForSeconds(1.0f);
+        Destroy(this.gameObject);
     }
 }

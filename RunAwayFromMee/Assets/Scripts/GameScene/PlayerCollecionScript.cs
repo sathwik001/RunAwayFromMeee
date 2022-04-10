@@ -7,6 +7,7 @@ public class PlayerCollecionScript : MonoBehaviour
     [SerializeField] private GameObject _shieldEffect;
     [SerializeField] private TextMeshProUGUI _bladesScoreText;
     public int _bladeScorePoints;
+    public bool isScalePowerUpActive;
 
     private void Start()
     {
@@ -27,7 +28,8 @@ public class PlayerCollecionScript : MonoBehaviour
         if(other.tag == "ScaleEffect")
         {
             Destroy(other.gameObject);
-            transform.localScale = new Vector2(-0.5f, 0.5f);
+            isScalePowerUpActive = true;
+            transform.localScale = new Vector2(0.5f, 0.5f);
             StartCoroutine(DisableScaleEffect());
         }
 
@@ -48,6 +50,7 @@ public class PlayerCollecionScript : MonoBehaviour
     IEnumerator DisableScaleEffect()
     {
         yield return new WaitForSeconds(7f);
-        transform.localScale = new Vector2(-0.32f, 0.28f);
+        isScalePowerUpActive = false;
+        transform.localScale = new Vector2(0.32f, 0.28f);
     }
 }

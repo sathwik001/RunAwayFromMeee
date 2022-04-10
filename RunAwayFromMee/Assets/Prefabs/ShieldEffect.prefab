@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3745308694143074535}
   - component: {fileID: 3745308694143074528}
-  - component: {fileID: 3745308694143074529}
   - component: {fileID: 3745308694143074530}
   - component: {fileID: -2481940674142981001}
   - component: {fileID: 6636414431455134896}
+  - component: {fileID: 7556158293773948992}
   m_Layer: 0
   m_Name: ShieldEffect
   m_TagString: ShieldEffect
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3745308694143074531}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.418, y: 3.11, z: 0}
-  m_LocalScale: {x: 0.7611667, y: 1.3266523, z: 1.3266523}
+  m_LocalScale: {x: 0.376255, y: 0.376255, z: 0.69830424}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 25
-  m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.58096457, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4ef043903ccafac4b948636662b8f37a, type: 3}
+  m_Color: {r: 0.15471691, g: 0.84791285, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -88,32 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &3745308694143074529
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3745308694143074531}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.5}
-    newSize: {x: 1, y: 0.5}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.5}
-  m_EdgeRadius: 0
 --- !u!50 &3745308694143074530
 Rigidbody2D:
   serializedVersion: 4
@@ -167,3 +141,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!68 &7556158293773948992
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3745308694143074531}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.68, y: 0}
+  - {x: -0.6729112, y: 0.52418846}
+  - {x: -0.61109364, y: 0.59054744}
+  - {x: -0.0024493933, y: 0.80459917}
+  - {x: 0.6232648, y: 0.5934021}
+  - {x: 0.6790102, y: 0.51849055}
+  - {x: 0.68, y: -0.14628445}
+  - {x: 0.5789464, y: -0.41383752}
+  - {x: 0.42517275, y: -0.56863296}
+  - {x: -0.0039283633, y: -0.80755085}
+  - {x: -0.42970437, y: -0.56631505}
+  - {x: -0.5571252, y: -0.4281367}
+  - {x: -0.6575756, y: -0.21297549}
+  - {x: -0.67720073, y: -0.0040630326}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

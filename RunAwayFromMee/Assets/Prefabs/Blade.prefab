@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 736381388401047458}
   - component: {fileID: 736381388401047459}
-  - component: {fileID: 736381388401047456}
   - component: {fileID: 736381388401047457}
   - component: {fileID: 6401527494989768892}
+  - component: {fileID: 146713845}
+  - component: {fileID: 5694882588975848949}
   m_Layer: 0
   m_Name: Blade
   m_TagString: Blade
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 736381388401047462}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.29, y: 2.44, z: 0}
-  m_LocalScale: {x: 0.31218305, y: 0.31218305, z: 0.31218305}
+  m_LocalScale: {x: 0.19156116, y: 0.19156116, z: 0.19156116}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 15
-  m_Sprite: {fileID: 21300000, guid: 7b062e7c2d8aac4429a6af0c58db5e95, type: 3}
+  m_Sprite: {fileID: 21300000, guid: da492bcb8ae02be4db7cc6d3879af13e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 1
@@ -87,22 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &736381388401047456
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 736381388401047462}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.34
 --- !u!50 &736381388401047457
 Rigidbody2D:
   serializedVersion: 4
@@ -136,3 +121,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e41e0bc171c20fa4b9d365321248d382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &146713845
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736381388401047462}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: df97c26531737e74a86bd138eea896f2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!68 &5694882588975848949
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736381388401047462}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -1.34, y: 0}
+  - {x: -0.50077856, y: 0.500779}
+  - {x: -0.004027497, y: 1.3638736}
+  - {x: 0.14222327, y: 1.1005816}
+  - {x: 0.52084553, y: 0.43789634}
+  - {x: 1.340571, y: 0.028548513}
+  - {x: 0.50169986, y: -0.47895288}
+  - {x: 0.0043904036, y: -1.3413193}
+  - {x: -0.51152885, y: -0.49739298}
+  - {x: -0.51152885, y: -0.4973929}
+  - {x: -0.8728585, y: -0.27267778}
+  - {x: -1.3471037, y: -0.024429083}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
